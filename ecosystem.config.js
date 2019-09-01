@@ -1,6 +1,6 @@
 module.exports = {
     apps : [{
-      name: "rayka-ad-sdk-back",
+      name: "lingotalk-exam-back",
       script: "./back",
       env: {
         GO_ENV: "staging",
