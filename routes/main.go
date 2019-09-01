@@ -9,8 +9,7 @@ var router *mux.Router
 
 func init() {
 	router = mux.NewRouter()
-	setAdsRoutes()
-	setUserRoutes()
+	setStuffRoutes()
 }
 
 // GetRouter function

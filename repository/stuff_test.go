@@ -1,13 +1,10 @@
 package repository
 
 import (
+	"lingotalk-exam/utilities"
 	"math/rand"
 	"testing"
 )
-
-func getStuffMocks() []string {
-	return []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
-}
 
 func TestSaveStuffToMemory(t *testing.T) {
 	defer func() {
@@ -16,8 +13,8 @@ func TestSaveStuffToMemory(t *testing.T) {
 		}
 	}()
 
-	newStuffKeys := getStuffMocks()
-	newStuffValues := getStuffMocks()
+	newStuffKeys := utilities.GetStuffMocks()
+	newStuffValues := utilities.GetStuffMocks()
 	for index := 0; index < len(newStuffKeys); index++ {
 		newStuffKey := newStuffKeys[rand.Intn(len(newStuffKeys))]
 		newStuffValue := newStuffValues[rand.Intn(len(newStuffValues))]
@@ -35,7 +32,7 @@ func TestGetStuffFromMemory(t *testing.T) {
 		}
 	}()
 
-	newStuffKeys := getStuffMocks()
+	newStuffKeys := utilities.GetStuffMocks()
 	for index := 0; index < len(newStuffKeys); index++ {
 		newStuffKey := newStuffKeys[rand.Intn(len(newStuffKeys))]
 		_, error := GetStuffFromMemory(newStuffKey)
@@ -52,8 +49,8 @@ func TestSaveStuffToDB(t *testing.T) {
 		}
 	}()
 
-	newStuffKeys := getStuffMocks()
-	newStuffValues := getStuffMocks()
+	newStuffKeys := utilities.GetStuffMocks()
+	newStuffValues := utilities.GetStuffMocks()
 	for index := 0; index < len(newStuffKeys); index++ {
 		newStuffKey := newStuffKeys[rand.Intn(len(newStuffKeys))]
 		newStuffValue := newStuffValues[rand.Intn(len(newStuffValues))]
@@ -71,7 +68,7 @@ func TestGetStuffFromDB(t *testing.T) {
 		}
 	}()
 
-	newStuffKeys := getStuffMocks()
+	newStuffKeys := utilities.GetStuffMocks()
 	for index := 0; index < len(newStuffKeys); index++ {
 		newStuffKey := newStuffKeys[rand.Intn(len(newStuffKeys))]
 		_, error := GetStuffFromDB(newStuffKey)
@@ -88,8 +85,8 @@ func TestSaveStuffToFile(t *testing.T) {
 		}
 	}()
 
-	newStuffKeys := getStuffMocks()
-	newStuffValues := getStuffMocks()
+	newStuffKeys := utilities.GetStuffMocks()
+	newStuffValues := utilities.GetStuffMocks()
 	for index := 0; index < len(newStuffKeys); index++ {
 		newStuffKey := newStuffKeys[rand.Intn(len(newStuffKeys))]
 		newStuffValue := newStuffValues[rand.Intn(len(newStuffValues))]
@@ -107,7 +104,7 @@ func TestGetStuffFromFile(t *testing.T) {
 		}
 	}()
 
-	newStuffKeys := getStuffMocks()
+	newStuffKeys := utilities.GetStuffMocks()
 	for index := 0; index < len(newStuffKeys); index++ {
 		newStuffKey := newStuffKeys[rand.Intn(len(newStuffKeys))]
 		_, error := GetStuffFromFile(newStuffKey)

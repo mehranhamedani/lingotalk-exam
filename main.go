@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"net/http"
 
-	"./config"
-	"./routes"
+	"lingotalk-exam/config"
+	"lingotalk-exam/routes"
 )
 
 func main() {
 	router := routes.GetRouter()
 	fmt.Println("listen on " + config.JSONConfig.Host + ":" + config.JSONConfig.Port)
-	error := http.ListenAndServe("localhost:8585", router)
+	error := http.ListenAndServe(fmt.Sprintf("%s:%s", config.JSONConfig.Host, config.JSONConfig.Port), router)
 	if error != nil {
 		fmt.Println(error.Error())
 	}

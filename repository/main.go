@@ -2,6 +2,7 @@ package repository
 
 import (
 	"fmt"
+	"lingotalk-exam/resources/texts"
 
 	"github.com/jinzhu/gorm"
 
@@ -36,7 +37,7 @@ func OpenDB() {
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
-		fmt.Println("DataBase is connected")
+		fmt.Println(texts.EN_DIC)
 	}
 }
 
